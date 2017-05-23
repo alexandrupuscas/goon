@@ -3,8 +3,11 @@
 @section('content')
     <div class="container">
         <div class="content">
-            <div class="title">Home Page</div>
-            <div class="quote">Our Home page!</div>
+            @if(Auth::check())
+                <div class="quote">You are now logged in!</div>
+            @else
+                <div class="quote">Our Home page!</div>
+            @endif
         </div>
     </div>
 @endsection
