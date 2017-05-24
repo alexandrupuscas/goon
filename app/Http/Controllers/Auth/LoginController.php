@@ -66,7 +66,12 @@ class LoginController extends Controller
 
         Auth::login($user);
 
-        return redirect('/')->with('success', 'Successfully logged in!');
+        return redirect('/home')->with('success', 'Successfully logged in!');
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect('/about')->with('success', 'You have logged out');
     }
 
 }
