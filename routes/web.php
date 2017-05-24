@@ -20,3 +20,8 @@ Route::get('/contact', 'PagesController@contact');
 Route::get('login/facebook', 'Auth\LoginController@redirectToFacebook');
 
 Route::get('login/facebook/callback', 'Auth\LoginController@getFacebookCallback');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('logout','Auth\LoginController@logout');

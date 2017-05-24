@@ -1,13 +1,17 @@
-@extends('master')
-@section('title', 'Home')
+@extends('layouts.app')
+
 @section('content')
-    <div class="container">
-        <div class="content">
-            @if(Auth::check())
-                <div class="quote">You are now logged in!</div>
-            @else
-                <div class="quote">Our Home page!</div>
-            @endif
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Dashboard</div>
+
+                <div class="panel-body">
+                    You are logged in!
+                </div>
+            </div>
         </div>
     </div>
+</div>
 @endsection
