@@ -16,3 +16,7 @@ Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 
 Route::get('/contact', 'PagesController@contact');
+
+Route::get('login/facebook', 'Auth\LoginController@redirectToFacebook');
+
+Route::get('login/facebook/callback', 'Auth\LoginController@getFacebookCallback');
