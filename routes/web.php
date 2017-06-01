@@ -30,10 +30,6 @@ Route::post('upload', 'ImagesController@store');
 
 Route::get('/blog', 'BlogController@index');
 
-Route::group(['prefix' => 'api/v1', 'middleware' => 'api'], function(){
-    Route::resource('posts', 'PostsController');
-});
-
 //Route::get('json', function () {
 //    return App\Post::paginate();
 //});

@@ -52,11 +52,7 @@ class PostsController extends Controller
             return $response;
         }
 
-        $post = new Post(array(
-            'title' => $request->title,
-            'content' => $request->content,
-//            'slug' => Str::slug($request->title, '-'),
-        ));
+        $post = Post::create($request->input());
 
         $post->save();
 
@@ -120,6 +116,15 @@ class PostsController extends Controller
             return $response;
         }
         $post = Post::find($id);
+
+        if(!$post) {
+            $response = Response::json([
+                'error' => [
+                    'message' => 'The post cannot be found.'
+                ]
+            ], 404);
+            return $response;
+        }
 
         $post->title = $request->title;
         $post->content = $request->content;
