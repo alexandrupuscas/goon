@@ -16,6 +16,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
+        'facebook_id' => mt_rand(1000000000000000, 9999999999999999),
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),

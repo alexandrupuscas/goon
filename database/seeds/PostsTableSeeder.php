@@ -23,7 +23,7 @@ class PostsTableSeeder extends Seeder
                 'content' =>$faker->paragraph(30),
                 'slug' => Str::slug($title, '-'),
                 'status' => 1,
-                'user_id' => $faker->numberBetween($min = 1, $max = 5),
+                'user_id' => $id,
             ]);
         }
     }
